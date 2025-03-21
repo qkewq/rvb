@@ -8,5 +8,5 @@ iptables -P FORWARD DROP
 iptables -A INPUT -i lo -j ACCEPT
 iptables -A INPUT -i lo -j ACCEPT
 
-iptables -A INPUT ip $proto --dport $port -j ACCEPT
-iptables -A OUTPUT ip $proto --sport $port -j ACCEPT
+iptables -A INPUT -p $proto --dport $port -j ACCEPT
+iptables -A OUTPUT -p $proto --sport $port -j ACCEPT
